@@ -1,3 +1,4 @@
+import openpyxl
 import numpy
 import streamlit as st
 import matplotlib.pyplot as plt
@@ -36,7 +37,8 @@ def myfunc():
     
     if uploaded_file is not None:
         st.header(mfat)
-        mfa2 = pd.read_excel(uploaded_file)
+        mfa2 = pd.read_excel(uploaded_file, engine='openpyxl')
+        #xlsx = pandas.ExcelFile('cat.xlsx', engine='openpyxl')
         #st.session_state.df922 = pd.read_excel(uploaded_file, sheet_name=['ff1', 'Sheet1'])
         #specific_sheet = mfa2['Sheet1']
         #st.write(specific_sheet)
